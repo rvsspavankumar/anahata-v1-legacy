@@ -1,0 +1,73 @@
+<div class="chat-wrapper">
+  <header class="page-header">
+    <h1 class="logo" (click)="goToDashboard()">Anahata</h1>
+    <button class="logout-btn" type="button" title="Logoff" (click)="logoff()">⎋</button>
+  </header>
+
+  <main class="content" [class.started]="!isStarterView">
+    <section class="starter-panel" *ngIf="isStarterView; else conversationView">
+      <div class="starter-title">What’s on your mind today?</div>
+      <div class="starter-subtitle">
+        Hi <span>{{ userName }}</span>, your score is {{ moodScore }}/25.
+      </div>
+
+      <form class="starter-input-row" (ngSubmit)="sendMessage()">
+        <span class="left-icon">+</span>
+        <textarea
+          #messageTextarea
+          rows="1"
+          name="message"
+          [(ngModel)]="messageInput"
+          [disabled]="isSending"
+          placeholder="Ask anything"
+          (input)="resizeMessageInput($event)"
+          (keydown.enter)="handleMessageKeydown($event)"
+        ></textarea>
+        <button type="submit" [disabled]="isSending || !messageInput.trim()">Send</button>
+      </form>
+    </section>
+
+    <ng-template #conversationView>
+      <section class="conversation-shell">
+        <div
+          class="messages messages-started"
+          #messagesContainer
+          [class.is-scrolling]="isMessagesScrolling"
+          (scroll)="handleMessagesScroll()"
+        >
+          <div
+            class="msg-row"
+            *ngFor="let msg of messages; trackBy: trackByIndex"
+            [class.user-row]="msg.role === 'user'"
+            [class.assistant-row]="msg.role === 'assistant'"
+          >
+            <p
+              class="msg-bubble"
+              [class.user-msg]="msg.role === 'user'"
+              [class.bot-msg]="msg.role === 'assistant'"
+              [innerHTML]="renderMessage(msg.content)"
+            >
+            </p>
+          </div>
+        </div>
+
+        <div class="input-dock">
+          <form class="bottom-input-row" (ngSubmit)="sendMessage()">
+            <span class="left-icon">+</span>
+            <textarea
+              #messageTextarea
+              rows="1"
+              name="message"
+              [(ngModel)]="messageInput"
+              [disabled]="isSending"
+              placeholder="Ask anything"
+              (input)="resizeMessageInput($event)"
+              (keydown.enter)="handleMessageKeydown($event)"
+            ></textarea>
+            <button type="submit" [disabled]="isSending || !messageInput.trim()">Send</button>
+          </form>
+        </div>
+      </section>
+    </ng-template>
+  </main>
+</div>

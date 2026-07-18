@@ -1,0 +1,10 @@
+{
+  "name": "anahata-app",
+  "private": true,
+  "scripts": {
+    "frontend": "npm --prefix frontend/anahata start",
+    "frontend:build": "npm --prefix frontend/anahata run build",
+    "frontend:test": "npm --prefix frontend/anahata run test",
+    "backend": "dotnet run --project backend/AnahataApi"
+  }
+}

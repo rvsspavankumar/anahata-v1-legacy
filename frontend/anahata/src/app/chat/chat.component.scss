@@ -1,0 +1,381 @@
+.chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background-color: #e3f5dd;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.logo {
+  font-family: 'Inspiration', cursive;
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.logout-btn {
+  position: absolute;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content.started {
+  justify-content: flex-start;
+}
+
+.starter-panel {
+  width: min(700px, 100%);
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
+.starter-title {
+  font-size: 38px;
+  font-weight: 500;
+  color: #222;
+  text-align: center;
+}
+
+.starter-subtitle {
+  font-size: 16px;
+  color: #444;
+  text-align: center;
+}
+
+.starter-subtitle span {
+  color: red;
+  font-weight: bold;
+}
+
+.starter-input-row {
+  width: min(640px, 100%);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: #c0c0c0;
+  border-radius: 999px;
+  padding: 8px 10px;
+}
+
+.left-icon {
+  font-size: 22px;
+  line-height: 1;
+  color: #3b3b3b;
+  padding: 0 4px;
+}
+
+.starter-input-row textarea {
+  flex: 1;
+  min-width: 0;
+  max-height: 59px;
+  border: none;
+  background: transparent;
+  color: #222;
+  font-size: 16px;
+  resize: none;
+  overflow-y: hidden;
+}
+
+.starter-input-row textarea:focus {
+  outline: none;
+}
+
+.starter-input-row button {
+  background-color: #8f8f8f;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.starter-input-row button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.intro-text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #444;
+  text-align: center;
+}
+
+.question-text {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+.question-text span {
+  color: red;
+  font-weight: bold;
+}
+
+.conversation-shell {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages-started {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 8px 24px;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scrollbar-gutter: stable;
+}
+
+.messages-started::-webkit-scrollbar {
+  width: 10px;
+}
+
+.messages-started::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages-started::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 999px;
+}
+
+.messages-started.is-scrolling {
+  scrollbar-color: #9aa79a transparent;
+}
+
+.messages-started.is-scrolling::-webkit-scrollbar-thumb {
+  background: #9aa79a;
+}
+
+.msg-row {
+  display: flex;
+  width: min(760px, 100%);
+}
+
+.assistant-row {
+  justify-content: flex-start;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.msg-bubble {
+  margin: 0;
+}
+
+.msg-bubble :is(code) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.msg-bubble :is(pre) {
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow-x: hidden;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.msg-bubble :is(a) {
+  color: #1f4f8f;
+}
+
+.user-msg {
+  padding: 10px 14px;
+  background-color: #8f8f8f;
+  border-radius: 14px;
+  color: #fff;
+}
+
+.bot-msg {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  color: #222;
+}
+
+.input-dock {
+  position: sticky;
+  bottom: 0;
+  background-color: #e3f5dd;
+  padding: 8px 0 10px;
+}
+
+.bottom-input-row {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: #c0c0c0;
+  border-radius: 999px;
+  padding: 8px 10px;
+}
+
+.bottom-input-row textarea {
+  flex: 1;
+  min-width: 0;
+  max-height: 59px;
+  border: none;
+  background: transparent;
+  color: #222;
+  font-size: 16px;
+  resize: none;
+  overflow-y: auto;
+}
+
+.bottom-input-row textarea:focus {
+  outline: none;
+}
+
+.bottom-input-row button {
+  background-color: #8f8f8f;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.bottom-input-row button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* 1) Base typography for the chat area */
+:host {
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #333333;
+  letter-spacing: 0.2px;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2) Logo stays as you defined */
+.logo {
+  font-family: 'Inspiration', cursive;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+/* 3) Starter title + subtitle */
+.starter-title {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.1px;
+  color: #2E2E2E;
+}
+
+.starter-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: #333333;
+}
+
+/* 4) Message bubbles */
+.msg-bubble {
+  font-size: 18px;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
+  color: #333333;
+  text-align: left;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  max-width: 100%;
+}
+
+.msg-bubble.user,
+.msg-bubble.assistant {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.assistant-row .msg-bubble {
+  width: 100%;
+}
+
+.user-row .msg-bubble {
+  width: auto;
+  max-width: 85%;
+}
+
+/* 5) Inputs */
+.starter-input-row textarea,
+.bottom-input-row textarea {
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+  color: #333333;
+  padding: 4px 0;
+}
+
+/* 6) Buttons */
+.starter-input-row button,
+.bottom-input-row button {
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 0.2px;
+  color: #333333;
+}
+
+/* 7) Inline code */
+code {
+  font-family: ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.95em;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #2E2E2E;
+  padding: 0.1em 0.35em;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}

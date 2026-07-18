@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #333333;
+  letter-spacing: 0.2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+app-root {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Global markdown safety rules for chat content rendered via [innerHTML]. */
+.msg-bubble {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.msg-bubble pre {
+  max-width: 100%;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+  overflow-x: hidden !important;
+}
+
+.msg-bubble code {
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+.msg-bubble a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}

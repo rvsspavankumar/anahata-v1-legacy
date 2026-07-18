@@ -1,0 +1,33 @@
+<div class="dashboard-wrapper">
+  <header class="page-header">
+    <h1 class="logo" (click)="goToDashboard()">Anahata</h1>
+    <button class="logout-btn" type="button" title="Logoff" (click)="logoff()">⎋</button>
+  </header>
+
+  <main class="content">
+    <h2>Previous Chats</h2>
+
+    <section class="chat-list" *ngIf="chatSummaries.length > 0; else emptyState">
+      <article class="chat-card" *ngFor="let chat of chatSummaries">
+        <div class="chat-card-head">
+          <h3>{{ chat.userName }}</h3>
+          <button type="button" (click)="openUserChat(chat.userName)">Open Chat</button>
+        </div>
+        <p class="count">{{ chat.messageCount }} messages</p>
+        <ul>
+          <li *ngFor="let msg of getPreviewMessages(chat.messages)">
+            <strong>{{ msg.role }}:</strong>
+            <span [innerHTML]="renderMessagePreview(msg.content)"></span>
+          </li>
+        </ul>
+        <p class="more-msg" *ngIf="getHiddenMessageCount(chat) > 0">
+          +{{ getHiddenMessageCount(chat) }} more messages
+        </p>
+      </article>
+    </section>
+
+    <ng-template #emptyState>
+      <p class="empty-text">No previous chats found yet.</p>
+    </ng-template>
+  </main>
+</div>

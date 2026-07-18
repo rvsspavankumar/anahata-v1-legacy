@@ -1,0 +1,24 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+
+# .NET build and user files
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+
+# Node and Angular generated files
+**/node_modules/
+**/dist/
+**/.angular/
+coverage/
+
+# Logs
+*.log
