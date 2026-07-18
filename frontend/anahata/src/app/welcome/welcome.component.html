@@ -1,0 +1,15 @@
+<div class="welcome-wrapper" (click)="goToQuestionnaire()">
+  <header class="welcome-header">
+    <h1 class="logo" (click)="goToDashboard($event)">Anahata</h1>
+    <button class="menu-btn" type="button" title="Logoff" (click)="logoff($event)">⎋</button>
+  </header>
+
+  <main class="welcome-main">
+    <h2>
+      Hello
+      <span class="highlight">{{ userName }}!</span>
+      <br />
+      how are you feeling today..?
+    </h2>
+  </main>
+</div>

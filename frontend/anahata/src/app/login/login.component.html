@@ -1,0 +1,48 @@
+<div class="login-wrapper">
+  <div class="login-box">
+    <h1 class="logo" (click)="goToDashboard()">Anahata</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input
+        class="pill-input"
+        type="email"
+        formControlName="email"
+        placeholder="User Name"
+      />
+      <div *ngIf="email?.touched && email?.invalid" class="error-msg">
+        <div *ngIf="email?.errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="email?.errors?.['email']">
+          Invalid email format.
+        </div>
+      </div>
+
+      <input
+        class="pill-input"
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+      <div *ngIf="password?.touched && password?.invalid" class="error-msg">
+        <div *ngIf="password?.errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="password?.errors?.['minlength']">
+          Password must be at least 6 characters.
+        </div>
+      </div>
+
+      <button
+        class="pill-button"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+    <form>
+      <button class="pill-button" type="submit" (click)="continueAsGuest()">Continue as Guest</button>
+    </form>
+  </div>
+</div>

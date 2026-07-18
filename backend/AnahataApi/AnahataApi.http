@@ -1,0 +1,6 @@
+@AnahataApi_HostAddress = http://localhost:5097
+
+GET {{AnahataApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

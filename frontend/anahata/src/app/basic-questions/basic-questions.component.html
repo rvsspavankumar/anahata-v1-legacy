@@ -1,0 +1,95 @@
+<div class="basic-questions-wrapper">
+  <header class="page-header">
+    <h1 class="logo" (click)="goToDashboard()">Anahata</h1>
+    <button class="logout-btn" type="button" title="Logoff" (click)="logoff()">⎋</button>
+  </header>
+
+  <main class="content">
+    <div class="intro-text">Let us go through a few basic questions...</div>
+    <div class="question-text">
+      Basic Questions for <span>{{ userName }}</span>
+    </div>
+    <p class="helper-text">Rate each item from 1 (low) to 5 (high).</p>
+
+    <form [formGroup]="questionsForm" (ngSubmit)="onSubmit()">
+    <label>
+      Energy level today
+      <div class="rating-buttons">
+        <button
+          type="button"
+          *ngFor="let value of ratingOptions"
+          [class.selected]="getRating('energy') === value"
+          (click)="setRating('energy', value)"
+        >
+          {{ value }}
+        </button>
+      </div>
+    </label>
+
+    <label>
+      Motivation to do tasks
+      <div class="rating-buttons">
+        <button
+          type="button"
+          *ngFor="let value of ratingOptions"
+          [class.selected]="getRating('motivation') === value"
+          (click)="setRating('motivation', value)"
+        >
+          {{ value }}
+        </button>
+      </div>
+    </label>
+
+    <label>
+      Sleep quality last night
+      <div class="rating-buttons">
+        <button
+          type="button"
+          *ngFor="let value of ratingOptions"
+          [class.selected]="getRating('sleepQuality') === value"
+          (click)="setRating('sleepQuality', value)"
+        >
+          {{ value }}
+        </button>
+      </div>
+    </label>
+
+    <label>
+      Current stress level
+      <div class="rating-buttons">
+        <button
+          type="button"
+          *ngFor="let value of ratingOptions"
+          [class.selected]="getRating('stressLevel') === value"
+          (click)="setRating('stressLevel', value)"
+        >
+          {{ value }}
+        </button>
+      </div>
+    </label>
+
+    <label>
+      Feeling socially connected
+      <div class="rating-buttons">
+        <button
+          type="button"
+          *ngFor="let value of ratingOptions"
+          [class.selected]="getRating('socialConnection') === value"
+          (click)="setRating('socialConnection', value)"
+        >
+          {{ value }}
+        </button>
+      </div>
+    </label>
+
+      <div class="button-group">
+        <button type="button" (click)="backToQuestionnaire()">Back</button>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <p class="result" *ngIf="submitted">
+      Thanks {{ userName }}. Your current mood score is {{ moodScore }} / 25.
+    </p>
+  </main>
+</div>

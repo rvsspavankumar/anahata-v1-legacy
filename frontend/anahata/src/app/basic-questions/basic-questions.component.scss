@@ -1,0 +1,133 @@
+.basic-questions-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background-color: #e3f5dd;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.logo {
+  font-family: 'Inspiration', cursive;
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.logout-btn {
+  position: absolute;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  margin-top: 1rem;
+  width: min(560px, 100%);
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rating-buttons button {
+  background-color: #c0c0c0;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rating-buttons button:hover {
+  background-color: #b0b0b0;
+}
+
+.rating-buttons button.selected {
+  background-color: #8f8f8f;
+  color: #fff;
+}
+
+.intro-text {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #444;
+  text-align: center;
+}
+
+.question-text {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.question-text span {
+  color: red;
+  font-weight: bold;
+}
+
+.helper-text {
+  margin: 0 0 10px 0;
+  color: #444;
+}
+
+.button-group {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.button-group button {
+  background-color: #c0c0c0;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.button-group button:hover {
+  background-color: #b0b0b0;
+}
+
+.result {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #222;
+}

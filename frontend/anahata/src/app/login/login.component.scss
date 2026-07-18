@@ -1,0 +1,69 @@
+// Full viewport pale green
+.login-wrapper {
+ display: flex;
+  justify-content: center;
+  align-items: flex-start;  // top-align instead of center
+  padding-top: 10vh;        // push it down 10% of the viewport
+  background: #d9ecd8;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+// White translucent box or skip if wireframe is flat
+.login-box {
+  text-align: center;
+  width: 320px;            // adjust as needed
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Inspiration', cursive;
+  font-weight: 300;
+  font-size: 10rem;
+  letter-spacing: 0.02em;    /* slight spacing for airiness */
+  line-height: 1;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+// Pill-style inputs
+.pill-input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 999px;
+  background: #bfc0c1;
+  font-size: 1rem;
+  outline: none;
+}
+
+// Pill-style button
+.pill-button {
+  display: block;
+  width: 50%;
+  margin: 1.5rem auto 0;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 999px;
+  background: #bfc0c1;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// (Optional) hide built-in error messages for now
+.error-msg {
+  color: #e53935;       // red
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
